@@ -1,0 +1,11 @@
+I1=imread('Image A.jpg');
+I2=imread('Image B.jpg');
+IA=rgb2gray(I1);
+IB=rgb2gray(I2);
+cpselect(IB,IA);%½«Í¼ÏñBÏòAÆ¥Åä
+tform=fitgeotrans(IBpoints,IApoints,'affine');
+I=imwarp(IB,tform);
+figure(1)
+imshow(IA);
+figure(2)
+imshow(I);
